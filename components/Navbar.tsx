@@ -1,57 +1,37 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <AppBar
-      position="fixed"
-      elevation={0}
-      sx={{
-        background: "rgba(40,20,0,0.55)",
-        backdropFilter: "blur(12px)",
-      }}
-    >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <header className="fixed top-0 left-0 z-50 w-full bg-black/50 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
-            alt="Maa Mansa Devi"
+            alt="Temple Logo"
             width={50}
             height={50}
+            className="rounded-full"
           />
+          <div>
+            <h1 className="text-lg font-bold text-yellow-300">
+              Maa Mansa Devi
+            </h1>
+            <p className="text-xs text-white">
+              Bara Gaon
+            </p>
+          </div>
+        </Link>
 
-          <Typography
-            variant="h6"
-            sx={{
-              color: "#FFD54F",
-              fontWeight: "bold",
-            }}
-          >
-            Maa Mansa Devi Mandir
-          </Typography>
-        </Box>
-
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <Button color="inherit" component={Link} href="/">
-            Home
-          </Button>
-
-          <Button color="inherit">About</Button>
-
-          <Button color="inherit">Gallery</Button>
-
-          <Button color="inherit">Aarti</Button>
-
-          <Button color="inherit">Contact</Button>
-        </Box>
-      </Toolbar>
-    </AppBar>
+        <nav className="hidden gap-8 text-white md:flex">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/gallery">Gallery</Link>
+          <Link href="/contact">Contact</Link>
+        </nav>
+      </div>
+    </header>
   );
 }

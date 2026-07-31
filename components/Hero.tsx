@@ -1,140 +1,62 @@
 "use client";
 
 import Image from "next/image";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <Box
-      sx={{
-        position: "relative",
-        height: "100vh",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background Image */}
+    <section className="relative h-screen overflow-hidden">
       <Image
         src="/images/temple-front.webp"
         alt="Maa Mansa Devi Mandir"
         fill
         priority
-        style={{ objectFit: "cover" }}
+        className="object-cover"
       />
 
-      {/* Gradient Overlay */}
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(rgba(0,0,0,0.55), rgba(88,37,0,0.65))",
-        }}
-      />
+      <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          px: 3,
-        }}
-      >
+      <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
         >
           <Image
             src="/images/logo.png"
             alt="Temple Logo"
             width={120}
             height={120}
+            className="mx-auto"
           />
 
-          <Typography
-            sx={{
-              color: "#FFD54F",
-              mt: 3,
-              fontSize: { xs: "1.4rem", md: "2rem" },
-              fontWeight: "bold",
-            }}
-          >
+          <h2 className="mt-6 text-2xl font-bold text-yellow-300 md:text-4xl">
             🕉️ ॐ जय माँ मनसा देवी ॐ
-          </Typography>
+          </h2>
 
-          <Typography
-            sx={{
-              color: "white",
-              fontWeight: 800,
-              mt: 2,
-              fontSize: { xs: "2.5rem", md: "4.8rem" },
-            }}
-          >
+          <h1 className="mt-4 text-5xl font-extrabold text-white md:text-7xl">
             Maa Mansa Devi Mandir
-          </Typography>
+          </h1>
 
-          <Typography
-            sx={{
-              color: "#FFE082",
-              mt: 2,
-              fontSize: { xs: "1rem", md: "1.5rem" },
-            }}
-          >
+          <p className="mt-4 text-lg text-yellow-100 md:text-2xl">
             A Sacred Place of Faith & Devotion
-          </Typography>
+          </p>
 
-          <Typography
-            sx={{
-              color: "#ffffff",
-              mt: 2,
-              fontSize: "1.2rem",
-            }}
-          >
+          <p className="mt-2 text-white">
             Bara Gaon, Uttar Pradesh
-          </Typography>
+          </p>
 
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            justifyContent="center"
-            mt={5}
-          >
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#e65100",
-                px: 4,
-                py: 1.5,
-                borderRadius: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              🙏 Plan Your Visit
-            </Button>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <button className="rounded-full bg-orange-600 px-8 py-3 font-bold text-white transition hover:bg-orange-700">
+              Plan Your Visit
+            </button>
 
-            <Button
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: "#FFD54F",
-                px: 4,
-                py: 1.5,
-                borderRadius: "30px",
-              }}
-            >
-              📸 View Gallery
-            </Button>
-          </Stack>
+            <button className="rounded-full border-2 border-yellow-300 px-8 py-3 font-bold text-white transition hover:bg-white hover:text-orange-700">
+              Photo Gallery
+            </button>
+          </div>
         </motion.div>
-      </Box>
-    </Box>
+      </div>
+    </section>
   );
 }
