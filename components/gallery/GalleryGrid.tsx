@@ -4,9 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { gallery } from "@/data/gallery";
 import GalleryFilter from "./GalleryFilter";
+import GalleryLightbox from "./GalleryLightbox";
 
 export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedImage, setSelectedImage] = useState<
+  (typeof gallery)[number] | null
+>(null);
 
   const filteredGallery =
     activeCategory === "All"
@@ -23,7 +27,8 @@ export default function GalleryGrid() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filteredGallery.map((image) => (
           <div
-            key={image.id}
+  key={image.id}
+  onClick={() => setSelectedImage(image)}
             className="overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
             <Image
@@ -46,6 +51,12 @@ export default function GalleryGrid() {
           </div>
         ))}
       </div>
+      {selectedImage && (
+  <GalleryLightbox
+    image={selectedImage}
+    onClose={() => setSelectedImage(null)}
+  />
+)}
     </>
   );
 }
