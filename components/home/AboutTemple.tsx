@@ -1,10 +1,12 @@
 "use client";
 
+import FadeInSection from "../shared/FadeInSection";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function AboutTemple() {
   return (
+    <FadeInSection>
     <section className="bg-gradient-to-b from-orange-50 to-white py-24">
       <div className="mx-auto max-w-7xl px-6">
 
@@ -123,5 +125,6 @@ export default function AboutTemple() {
         </div>
       </div>
     </section>
+    </FadeInSection>
   );
 }

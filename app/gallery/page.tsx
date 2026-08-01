@@ -1,14 +1,17 @@
+import GalleryGrid from "@/components/gallery/GalleryGrid";
+import SectionHeading from "@/components/shared/SectionHeading";
+
 export default function GalleryPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-24">
-      <h1 className="text-5xl font-bold text-orange-700">
-        Temple Gallery
-      </h1>
 
-      <p className="mt-8 text-lg">
-        This gallery will showcase temple photographs, festivals,
-        devotional events, videos, and memorable moments.
-      </p>
+      <SectionHeading
+        title="Temple Gallery"
+        subtitle="Explore the divine beauty of Maa Mansa Devi Mandir through photographs of the temple, festivals, aarti, and devotees."
+      />
+
+      <GalleryGrid />
+
     </main>
   );
 }
