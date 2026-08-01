@@ -1,8 +1,11 @@
-import TempleTimings from "../components/TempleTimings";
-import AboutTemple from "../components/AboutTemple";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import DivineDarshan from "../components/DivineDarshan";
+import AboutTemple from "../components/AboutTemple";
+import TempleTimings from "../components/TempleTimings";
+import UpcomingFestivals from "../components/UpcomingFestivals";
+import GalleryPreview from "../components/GalleryPreview";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <DivineDarshan />
       <AboutTemple />
       <TempleTimings />
+      <UpcomingFestivals />
+      <GalleryPreview />
+      <Footer />
     </main>
   );
 }
