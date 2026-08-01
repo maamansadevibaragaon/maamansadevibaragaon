@@ -26,7 +26,7 @@ const festivals = [
   },
   {
     name: "Annual Bhandara",
-    date: "To Be Announced",
+    date: "Every Astami of Navratri",
     icon: "🍛",
     description:
       "Community feast organized by the temple committee.",

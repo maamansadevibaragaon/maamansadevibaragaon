@@ -33,7 +33,7 @@ export default function Hero() {
           />
 
           <p className="mt-6 text-yellow-300 text-xl md:text-3xl font-semibold">
-            🕉️ ॐ जय माँ मनसा देवी ॐ
+            ॐ जय माँ मनसा देवी ॐ
           </p>
 
           <h1 className="mt-4 text-white text-5xl md:text-7xl font-extrabold">
@@ -41,11 +41,14 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-yellow-100 text-lg md:text-2xl">
-            A Sacred Place of Faith & Devotion
+            ॥ ॐ ह्रीं श्रीं मंसादेव्यै नमः ॥
+
+"भक्तानां मनोकामना पूर्णाय,
+दिव्य कृपा स्वरूपिण्यै नमो नमः॥"
           </p>
 
           <p className="mt-2 text-white text-lg">
-            Bara Gaon, Uttar Pradesh
+            जहाँ आस्था है, वहाँ माँ का आशीर्वाद है।
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

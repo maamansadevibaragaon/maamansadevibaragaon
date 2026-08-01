@@ -1,4 +1,5 @@
 import FloatingButtons from "../components/layout/FloatingButtons";
+import TempleSchema from "../components/seo/TempleSchema";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -14,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Maa Mansa Devi Mandir | Ravan Urf Bara Gaon | Baghpat",
+  title: {
+  default: "Maa Mansa Devi Mandir | Ravan Urf Bara Gaon | Baghpat",
+  template: "%s | Maa Mansa Devi Mandir",
+},
   description:
     "Official website of Maa Mansa Devi Mandir, Ravan Urf Bara Gaon, Baghpat, Uttar Pradesh. Explore temple history, darshan timings, festivals, gallery, and contact information.",
 
@@ -35,13 +39,10 @@ export const metadata: Metadata = {
 
   publisher: "Maa Mansa Devi Mandir",
 
-  metadataBase: new URL("https://maamansadevimandir.in"),
-
   openGraph: {
     title: "Maa Mansa Devi Mandir",
     description:
       "Official website of Maa Mansa Devi Mandir, Bara Gaon, Baghpat.",
-    url: "https://maamansadevimandir.in",
     siteName: "Maa Mansa Devi Mandir",
     locale: "en_IN",
     type: "website",
@@ -58,9 +59,13 @@ export default function RootLayout({
       lang="en-IN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}
-        <FloatingButtons />
-      </body>
+      <body className="min-h-full flex flex-col">
+  <TempleSchema />
+
+  {children}
+
+  <FloatingButtons />
+</body>
     </html>
   );
 }
