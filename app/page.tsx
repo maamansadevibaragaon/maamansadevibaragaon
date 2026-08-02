@@ -17,47 +17,34 @@ export default function Home() {
   return (
     <main>
       <Navbar />
+
       <Hero />
 
-<DivineDarshan />
+      <DivineDarshan />
 
-<FadeInSection>
-  <Announcements />
-</FadeInSection>
+      <FadeInSection>
+        <Announcements />
+      </FadeInSection>
 
-<FadeInSection>
-  <AboutTemple />
-</FadeInSection>
+      <FadeInSection>
+        <AboutTemple />
+      </FadeInSection>
 
-<FadeInSection>
-  <TempleTimings />
-</FadeInSection>
+      <TempleTimings />
 
-<FadeInSection>
-  <UpcomingFestivals />
-</FadeInSection>
+      <UpcomingFestivals />
 
-<FadeInSection>
-  <GalleryPreview />
-</FadeInSection>
+      <GalleryPreview />
 
-<FadeInSection>
-  <TempleManagement />
-</FadeInSection>
+      <TempleManagement />
 
-<FadeInSection>
-  <GoogleReviews />
-</FadeInSection>
+      <GoogleReviews />
 
-<FadeInSection>
-  <TempleCommunity />
-</FadeInSection>
+      <TempleCommunity />
 
-<FadeInSection>
-  <TempleLocation />
-</FadeInSection>
+      <TempleLocation />
 
-<Footer />
+      <Footer />
     </main>
   );
 }
