@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import FlowerShower from "../components/layout/FlowerShower";
 import FloatingButtons from "../components/layout/FloatingButtons";
 import TempleSchema from "../components/seo/TempleSchema";
@@ -139,6 +140,7 @@ export default function RootLayout({
         {children}
 
         <FloatingButtons />
+        <GoogleAnalytics gaId="G-CY712Z7G4F" />
       </body>
     </html>
   );
