@@ -39,12 +39,12 @@ export default function TempleManagement() {
             >
 
               <Image
-                src={person.image}
-                alt={person.name}
-                width={170}
-                height={220}
-                className="mx-auto rounded-2xl object-cover shadow-lg"
-              />
+  src={person.image}
+  alt={person.name}
+  width={170}
+  height={220}
+  className="mx-auto h-auto w-[170px] rounded-2xl object-cover shadow-lg"
+/>
 
               <h4 className="mt-6 text-2xl font-bold text-orange-700">
                 {person.name}
@@ -76,12 +76,12 @@ export default function TempleManagement() {
             >
 
               <Image
-                src={person.image}
-                alt={person.name}
-                width={140}
-                height={180}
-                className="mx-auto rounded-2xl object-cover shadow-md"
-              />
+  src={person.image}
+  alt={person.name}
+  width={140}
+  height={180}
+  className="mx-auto h-auto w-[140px] rounded-2xl object-cover shadow-md"
+/>
 
               <h4 className="mt-5 text-xl font-bold text-orange-700">
                 {person.name}

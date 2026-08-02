@@ -1,29 +1,35 @@
+import {
+  Sunrise,
+  Sunset,
+  Clock3,
+  Bell,
+} from "lucide-react";
 export default function TempleTimings() {
   const timings = [
-    {
-      title: "Morning Darshan",
-      time: "5:00 AM – 2:00 PM",
-      icon: "🌅",
-    },
-    {
-      title: "Evening Darshan",
-      time: "4:00 PM – 10:00 PM",
-      icon: "🌙",
-    },
-    {
-      title: "Morning Aarti",
-      time: "5:00 AM",
-      icon: "🪔",
-    },
-    {
-      title: "Evening Aarti",
-      time: "7:00 PM",
-      icon: "🔔",
-    },
-  ];
+  {
+    title: "Morning Darshan",
+    time: "5:00 AM – 2:00 PM",
+    icon: Sunrise,
+  },
+  {
+    title: "Evening Darshan",
+    time: "4:00 PM – 10:00 PM",
+    icon: Sunset,
+  },
+  {
+    title: "Morning Aarti",
+    time: "5:00 AM",
+    icon: Clock3,
+  },
+  {
+    title: "Evening Aarti",
+    time: "7:00 PM",
+    icon: Bell,
+  },
+];
 
   return (
-    <section className="bg-orange-100 py-24">
+    <section className="bg-gradient-to-b from-orange-50 to-orange-100 py-24">
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="text-center">
@@ -44,9 +50,11 @@ export default function TempleTimings() {
           {timings.map((item) => (
             <div
               key={item.title}
-              className="rounded-3xl bg-white p-8 text-center shadow-xl transition hover:-translate-y-2"
+              className="rounded-3xl bg-white p-8 text-center shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <div className="text-5xl">{item.icon}</div>
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-b from-orange-50 to-orange-100 text-orange-700 shadow-md">
+  <item.icon size={40} strokeWidth={2.2} />
+</div>
 
               <h3 className="mt-5 text-2xl font-bold">
                 {item.title}

@@ -1,3 +1,4 @@
+import FlowerShower from "../components/layout/FlowerShower";
 import FloatingButtons from "../components/layout/FloatingButtons";
 import TempleSchema from "../components/seo/TempleSchema";
 import type { Metadata } from "next";
@@ -15,37 +16,108 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maamansadevibaragaon.vercel.app"),
+
   title: {
-  default: "Maa Mansa Devi Mandir | Ravan Urf Bara Gaon | Baghpat",
-  template: "%s | Maa Mansa Devi Mandir",
-},
+    default: "Maa Mansa Devi Mandir | Ravan Urf Bara Gaon | Baghpat",
+    template: "%s | Maa Mansa Devi Mandir",
+  },
+
   description:
-    "Official website of Maa Mansa Devi Mandir, Ravan Urf Bara Gaon, Baghpat, Uttar Pradesh. Explore temple history, darshan timings, festivals, gallery, and contact information.",
+    "Official website of Maa Mansa Devi Mandir, Ravan Urf Bara Gaon, Baghpat, Uttar Pradesh. Get temple history, darshan timings, daily aarti schedule, festivals, gallery, donations, and contact information.",
 
   keywords: [
+    // English
     "Maa Mansa Devi Mandir",
     "Mansa Devi Mandir Bara Gaon",
     "Maa Mansa Devi Baghpat",
     "Mansa Devi Temple Uttar Pradesh",
     "Ravan Urf Bara Gaon Temple",
+    "Baghpat Temple",
     "Hindu Temple Baghpat",
+    "Temple Donation",
+    "Daily Aarti",
     "Navratri Bara Gaon",
-    "Mata Ka Jagran Bara Gaon",
+
+    // Hindi
+    "माँ मनसा देवी मंदिर",
+    "माँ मनसा देवी मंदिर बड़ागांव",
+    "मनसा देवी मंदिर बागपत",
+    "बड़ागांव मंदिर",
+    "बागपत मंदिर",
+    "माँ मनसा देवी",
+    "नवरात्रि बड़ागांव",
+    "माता का जागरण",
+    "दैनिक आरती",
+    "मंदिर दान",
   ],
 
-  authors: [{ name: "Maa Mansa Devi Mandir" }],
+  authors: [
+    {
+      name: "Maa Mansa Devi Mandir",
+    },
+  ],
 
   creator: "Maa Mansa Devi Mandir",
 
   publisher: "Maa Mansa Devi Mandir",
 
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-IN": "/",
+      hi: "/",
+    },
+  },
+
   openGraph: {
+    title: "Maa Mansa Devi Mandir | Ravan Urf Bara Gaon | Baghpat",
+
+    description:
+      "Official website of Maa Mansa Devi Mandir, Bara Gaon, Baghpat, Uttar Pradesh.",
+
+    siteName: "Maa Mansa Devi Mandir",
+
+    locale: "en_IN",
+
+    type: "website",
+
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Maa Mansa Devi Mandir",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
     title: "Maa Mansa Devi Mandir",
+
     description:
       "Official website of Maa Mansa Devi Mandir, Bara Gaon, Baghpat.",
-    siteName: "Maa Mansa Devi Mandir",
-    locale: "en_IN",
-    type: "website",
+
+    images: ["/images/logo.png"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
@@ -60,12 +132,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-  <TempleSchema />
+        <TempleSchema />
 
-  {children}
+        <FlowerShower />
 
-  <FloatingButtons />
-</body>
+        {children}
+
+        <FloatingButtons />
+      </body>
     </html>
   );
 }

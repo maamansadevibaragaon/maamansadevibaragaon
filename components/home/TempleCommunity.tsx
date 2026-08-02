@@ -1,3 +1,9 @@
+import {
+  MapPin,
+  Camera,
+  Star,
+  Globe,
+} from "lucide-react";
 import { temple } from "../../data/temple";
 
 export default function TempleCommunity() {
@@ -23,9 +29,11 @@ export default function TempleCommunity() {
             href={temple.googleMaps}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+            className="rounded-3xl bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
           >
-            <div className="text-5xl">📍</div>
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-700 shadow-md">
+  <MapPin size={38} />
+</div>
 
             <h3 className="mt-5 text-2xl font-bold">
               Google Maps
@@ -42,7 +50,9 @@ export default function TempleCommunity() {
             rel="noopener noreferrer"
             className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
           >
-            <div className="text-5xl">📘</div>
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-700 shadow-md">
+  <Globe size={38} />
+</div>
 
             <h3 className="mt-5 text-2xl font-bold">
               Facebook
@@ -59,7 +69,9 @@ export default function TempleCommunity() {
             rel="noopener noreferrer"
             className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
           >
-            <div className="text-5xl">📸</div>
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-700 shadow-md">
+  <Camera size={38} />
+</div>
 
             <h3 className="mt-5 text-2xl font-bold">
               Instagram
@@ -76,7 +88,9 @@ export default function TempleCommunity() {
             rel="noopener noreferrer"
             className="rounded-3xl bg-white p-8 shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
           >
-            <div className="text-5xl">⭐</div>
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-700 shadow-md">
+  <Star size={38} />
+</div>
 
             <h3 className="mt-5 text-2xl font-bold">
               Leave a Review

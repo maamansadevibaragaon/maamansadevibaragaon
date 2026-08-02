@@ -1,3 +1,4 @@
+import DonationHistory from "@/components/home/DonationHistory";
 import Image from "next/image";
 import { temple } from "@/data/temple";
 
@@ -27,7 +28,7 @@ export default function DonatePage() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
 
-          {/* QR */}
+          {/* QR Code */}
 
           <div className="rounded-3xl bg-white p-10 shadow-2xl">
 
@@ -114,6 +115,12 @@ export default function DonatePage() {
 
           </div>
 
+        </div>
+
+        {/* Donation History */}
+
+        <div className="mt-20">
+          <DonationHistory />
         </div>
 
         {/* Contact */}
