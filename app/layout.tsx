@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "DI7Dor1VUjgPpJywIuZE7_RmbrInyEFh8nMDeZ1UtLU",
+  },
+
   metadataBase: new URL("https://maamansadevibaragaon.vercel.app"),
 
   title: {
