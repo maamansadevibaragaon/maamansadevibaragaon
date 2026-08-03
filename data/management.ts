@@ -13,41 +13,16 @@ export const priests = [
   },
 ];
 
-export const executives = [
-  {
-    id: 1,
-    name: "Neeraj Tyagi",
-    designation: "President",
-    image: "/images/management/committee/neeraj-tyagi.jpg",
-  },
-  {
-    id: 2,
-    name: "Anand Tyagi",
-    designation: "Vice-President",
-    image: "/images/management/committee/anand-tyagi.jpg",
-  },
-  {
-    id: 3,
-    name: "Videsh Tyagi",
-    designation: "Vice-President",
-    image: "/images/management/committee/videsh-tyagi.jpg",
-  },
-  {
-    id: 4,
-    name: "Rahul Tyagi",
-    designation: "Social Media Creator",
-    image: "/images/management/committee/rahul-tyagi.png",
-  },
-];
-
 export const committeeMembers = [
-  "Pradeep Tyagi",
-  "Rupak Tyagi",
-  "Raju Sharma",
-  "Suresh Tyagi",
-  "Jony Tyagi",
-  "Umesh Tyagi",
+  "Neeraj Tyagi (President)",
+  "Dushyant Tyagi",
+  "Anand Tyagi",
+  "Joony Tyagi",
+  "Pardeep Tyagi",
   "Sunil Tyagi",
-  "Dushiyant",
-  "Aap or Ham",
+  "Narendra Tyagi",
+  "Ram Naresh Tyagi",
+  "Nishant Tyagi",
+  "Kannu Tyagi",
+  "Kapil Tyagi",
 ];

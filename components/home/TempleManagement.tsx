@@ -72,46 +72,6 @@ export default function TempleManagement() {
 
         </div>
 
-        {/* Executive Committee */}
-
-        <div className="mt-24">
-
-          <h3 className="mb-10 text-center text-3xl font-bold text-orange-700">
-            👥 Executive Committee
-          </h3>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-            {executives.map((person) => (
-
-              <div
-                key={person.id}
-                className="rounded-3xl border border-orange-200 bg-white p-6 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-2xl"
-              >
-
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  width={150}
-                  height={190}
-                  className="mx-auto h-auto w-[150px] rounded-2xl object-cover shadow-md"
-                />
-
-                <h4 className="mt-5 text-xl font-bold text-orange-700">
-                  {person.name}
-                </h4>
-
-                <p className="mt-2 font-medium text-gray-600">
-                  {person.designation}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
 
         {/* Committee Members */}
 
