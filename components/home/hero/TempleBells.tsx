@@ -20,13 +20,13 @@ export default function TempleBells() {
         }}
       >
         <Image
-          src="/images/bell.png"
-          alt="Temple Bell"
-          width={90}
-          height={180}
-          priority
-          className="drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]"
-        />
+  src="/images/bell.png"
+  alt="Temple Bell"
+  width={90}
+  height={180}
+  priority
+  className="h-auto w-[90px] drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]"
+/>
       </motion.div>
 
       {/* Right Bell */}

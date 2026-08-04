@@ -3,48 +3,46 @@
 import DivineSlok from "./DivineSlok";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowDown, Camera, MapPin } from "lucide-react";
+import { ArrowDown, MapPin, BellRing } from "lucide-react";
 
 export default function HeroContent() {
   return (
     <div className="relative z-20 mx-auto flex max-w-6xl flex-col items-center px-6 pt-32 text-center">
 
-      {/* OM */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1 }}
-        className="mb-5"
+      {/* Ring Bell Button */}
+      <motion.button
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        onClick={() => {
+          window.dispatchEvent(new Event("temple-start"));
+        }}
+        className="group mb-8 flex items-center gap-3 rounded-full border-2 border-yellow-300 bg-yellow-400/15 px-8 py-4 text-yellow-200 shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-yellow-300 hover:text-orange-700"
       >
-        <h2 className="text-6xl text-yellow-300 drop-shadow-[0_0_35px_rgba(255,210,80,0.9)] md:text-8xl">
-          🕉
-        </h2>
-      </motion.div>
-
-      {/* SHREE */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="tracking-[12px] text-yellow-200"
-      >
-        श्री
-      </motion.p>
+        <BellRing
+          size={30}
+          className="group-hover:animate-bounce"
+        />
+        <span className="text-xl font-bold">
+          Ring the Temple Bell
+        </span>
+      </motion.button>
 
       {/* TITLE */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 1 }}
-        className="mt-5 text-5xl font-black leading-tight text-white md:text-8xl"
+        transition={{ delay: 0.3, duration: 1 }}
+        className="text-5xl font-black leading-tight text-white md:text-8xl"
       >
         Maa Mansa Devi
       </motion.h1>
 
+      {/* SUBTITLE */}
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 0.6 }}
         className="mt-3 text-3xl font-bold tracking-[8px] text-yellow-300 md:text-5xl"
       >
         MANDIR
@@ -54,21 +52,21 @@ export default function HeroContent() {
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3 }}
+        transition={{ delay: 0.9 }}
         className="mt-8 flex items-center gap-2 rounded-full bg-orange-600/70 px-6 py-3 text-white backdrop-blur-lg"
       >
         <MapPin size={18} />
         Bara Gaon • Baghpat • Uttar Pradesh
       </motion.div>
 
-      {/* DIVINE SHLOK */}
+      {/* Sanskrit Slok */}
       <DivineSlok />
 
-      {/* WELCOME */}
+      {/* Welcome */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.1 }}
+        transition={{ delay: 1.2 }}
         className="mt-8 max-w-4xl text-lg leading-9 text-white md:text-2xl"
       >
         माँ मनसा देवी के दिव्य दरबार में आपका हार्दिक स्वागत है।
@@ -77,11 +75,11 @@ export default function HeroContent() {
         पावन अनुभव प्राप्त करें।
       </motion.p>
 
-      {/* BUTTONS */}
+      {/* Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5 }}
+        transition={{ delay: 1.5 }}
         className="mt-14 flex flex-col gap-5 sm:flex-row"
       >
         <Link
@@ -92,15 +90,14 @@ export default function HeroContent() {
         </Link>
 
         <Link
-          href="/gallery"
-          className="flex items-center justify-center gap-2 rounded-full border-2 border-yellow-300 px-10 py-4 text-lg font-bold text-yellow-200 transition hover:bg-white hover:text-orange-700"
+          href="/donate"
+          className="rounded-full border-2 border-yellow-300 bg-yellow-400/10 px-10 py-4 text-lg font-bold text-yellow-200 shadow-xl transition-all duration-300 hover:scale-105 hover:bg-yellow-300 hover:text-orange-700"
         >
-          <Camera size={20} />
-          Explore Gallery
+          ❤️ Donate
         </Link>
       </motion.div>
 
-      {/* SCROLL */}
+      {/* Scroll Down */}
       <motion.div
         animate={{ y: [0, 12, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
