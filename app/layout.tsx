@@ -1,10 +1,13 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+
+import "./globals.css";
+
+import TempleAudio from "../components/layout/TempleAudio";
 import FlowerShower from "../components/layout/FlowerShower";
 import FloatingButtons from "../components/layout/FloatingButtons";
 import TempleSchema from "../components/seo/TempleSchema";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +35,6 @@ export const metadata: Metadata = {
     "Official website of Maa Mansa Devi Mandir, Ravan Urf Bara Gaon, Baghpat, Uttar Pradesh. Get temple history, darshan timings, daily aarti schedule, festivals, gallery, donations, and contact information.",
 
   keywords: [
-    // English
     "Maa Mansa Devi Mandir",
     "Mansa Devi Mandir Bara Gaon",
     "Maa Mansa Devi Baghpat",
@@ -44,7 +46,6 @@ export const metadata: Metadata = {
     "Daily Aarti",
     "Navratri Bara Gaon",
 
-    // Hindi
     "माँ मनसा देवी मंदिर",
     "माँ मनसा देवी मंदिर बड़ागांव",
     "मनसा देवी मंदिर बागपत",
@@ -137,13 +138,22 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Temple Audio (Bell → Shlok) */}
+        <TempleAudio />
+
+        {/* SEO Schema */}
         <TempleSchema />
 
+        {/* Flower Animation */}
         <FlowerShower />
 
+        {/* Website Content */}
         {children}
 
+        {/* Floating Action Buttons */}
         <FloatingButtons />
+
+        {/* Google Analytics */}
         <GoogleAnalytics gaId="G-CY712Z7G4F" />
       </body>
     </html>

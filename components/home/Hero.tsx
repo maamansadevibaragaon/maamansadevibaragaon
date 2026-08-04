@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import HeroBackground from "./hero/HeroBackground";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MapPin, Camera, ArrowDown } from "lucide-react";
@@ -9,19 +9,8 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
-      {/* Background Image */}
-
-      <Image
-        src="/images/temple-front.webp"
-        alt="Maa Mansa Devi Mandir"
-        fill
-        priority
-        className="object-cover"
-      />
-
-      {/* Dark Overlay */}
-
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-orange-950/80" />
+      {/* Premium Animated Background */}
+      <HeroBackground />
 
       {/* Hero Content */}
 
@@ -32,10 +21,10 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: -25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="rounded-full border border-yellow-300/40 bg-white/10 px-5 py-2 backdrop-blur-md"
+          transition={{ duration: 0.8 }}
+          className="rounded-full border border-yellow-300/40 bg-white/10 px-6 py-2 backdrop-blur-md"
         >
-          <p className="text-sm font-semibold tracking-wide text-yellow-300 md:text-base">
+          <p className="text-sm font-semibold tracking-[3px] text-yellow-300 md:text-base">
             ॐ जय माँ मनसा देवी ॐ
           </p>
         </motion.div>
@@ -43,10 +32,13 @@ export default function Hero() {
         {/* Heading */}
 
         <motion.h1
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="mt-8 text-5xl font-extrabold leading-tight text-white drop-shadow-2xl md:text-7xl"
+          transition={{
+            delay: 0.3,
+            duration: 1,
+          }}
+          className="mt-8 text-5xl font-extrabold leading-tight text-white drop-shadow-[0_0_25px_rgba(255,180,0,0.5)] md:text-7xl"
         >
           Maa Mansa Devi
           <br />
@@ -58,12 +50,14 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.45 }}
-          className="mt-5 flex items-center gap-2 rounded-full bg-orange-600/80 px-5 py-2 text-white shadow-xl backdrop-blur"
+          transition={{
+            delay: 0.7,
+          }}
+          className="mt-6 flex items-center gap-2 rounded-full bg-orange-600/80 px-6 py-3 text-white shadow-xl backdrop-blur"
         >
           <MapPin size={18} />
           <span className="font-medium">
-            Bara Gaon, Baghpat (U.P.)
+            Bara Gaon • Baghpat • Uttar Pradesh
           </span>
         </motion.div>
 
@@ -72,8 +66,10 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 max-w-4xl text-xl leading-relaxed text-yellow-100 md:text-3xl"
+          transition={{
+            delay: 1,
+          }}
+          className="mt-10 text-2xl leading-relaxed text-yellow-100 md:text-3xl"
         >
           ॥ ॐ ह्रीं श्रीं मंसादेव्यै नमः ॥
         </motion.p>
@@ -81,24 +77,27 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-5 max-w-5xl text-lg leading-9 text-orange-100 md:text-2xl"
+          transition={{
+            delay: 1.3,
+          }}
+          className="mt-6 max-w-5xl text-lg leading-9 text-orange-100 md:text-2xl"
         >
-          भक्तानां मनोकामना पूर्णाय,
+          भक्तानां मनोकामना पूर्णाय
           <br />
           दिव्य कृपा स्वरूपिण्यै नमो नमः॥
         </motion.p>
 
-        {/* Quote */}
+        {/* Welcome */}
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-6 text-lg italic text-white md:text-2xl"
+          transition={{
+            delay: 1.6,
+          }}
+          className="mt-8 text-xl italic text-white md:text-2xl"
         >
-          माँ मनसा देवी के दिव्य दरबार में
-          आपका स्वागत है।
+          माँ मनसा देवी के दिव्य दरबार में आपका हार्दिक स्वागत है।
         </motion.p>
 
         {/* Buttons */}
@@ -106,8 +105,10 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-          className="mt-12 flex flex-col gap-5 sm:flex-row"
+          transition={{
+            delay: 1.9,
+          }}
+          className="mt-14 flex flex-col gap-5 sm:flex-row"
         >
           <Link
             href="/contact"
@@ -125,23 +126,26 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll */}
 
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{
+            y: [0, 12, 0],
+          }}
           transition={{
             repeat: Infinity,
-            duration: 1.8,
+            duration: 2,
           }}
-          className="mt-20"
+          className="mt-24"
         >
           <ArrowDown
-            size={36}
-            className="mx-auto text-white opacity-80"
+            size={38}
+            className="mx-auto text-yellow-300"
           />
         </motion.div>
 
       </div>
+
     </section>
   );
 }

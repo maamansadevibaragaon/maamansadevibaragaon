@@ -1,5 +1,5 @@
 import Navbar from "../components/layout/Navbar";
-import Hero from "../components/home/Hero";
+import Hero from "@/components/home/hero/Hero";
 import AboutTemple from "../components/home/AboutTemple";
 import DivineDarshan from "../components/home/DivineDarshan";
 import TempleTimings from "../components/home/TempleTimings";
