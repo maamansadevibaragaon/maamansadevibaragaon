@@ -2,7 +2,7 @@ export const announcements = [
   {
     id: 1,
     title: "श्री कृष्ण जन्माष्टमी महोत्सव",
-    date: "16 August 2026",
+    date: "04 September 2026",
     description:
       "सभी श्रद्धालुओं से अनुरोध है कि श्री कृष्ण जन्माष्टमी महोत्सव में परिवार सहित पधारें एवं पुण्य लाभ प्राप्त करें।",
     type: "festival",
@@ -21,10 +21,10 @@ export const announcements = [
 
   {
     id: 3,
-    title: "विशाल भंडारा",
-    date: "02 August 2026",
+    title: "6th Dak Kawad",
+    date: "08 August 2026",
     description:
-      "मंदिर परिसर में विशाल भंडारे का आयोजन किया जाएगा। सभी भक्त सादर आमंत्रित हैं।",
+      "माँ मनसा देवी की 6वीं डाक कांवड़ 08 अगस्त 2026 को जाएगी। अधिक जानकारी के लिए संपर्क करें- 7895493873",
     type: "bhandara",
     important: true,
   },
