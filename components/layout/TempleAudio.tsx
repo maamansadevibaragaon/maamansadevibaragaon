@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function TempleAudio() {
+  const started = useRef(false);
+
   useEffect(() => {
     const bell = new Audio("/audio/bell.mp3");
     const shlok = new Audio("/audio/shlok.mp3");
@@ -13,27 +15,37 @@ export default function TempleAudio() {
     bell.volume = 1;
     shlok.volume = 1;
 
-    const playTempleAudio = async () => {
+    // IMPORTANT
+    shlok.loop = false;
+
+    const startTemple = async () => {
+      // Prevent playing more than once
+      if (started.current) return;
+
+      started.current = true;
+
       try {
-        // Play Bell
+        bell.currentTime = 0;
         await bell.play();
 
-        // When Bell Ends → Play Shlok
         bell.onended = async () => {
           try {
+            shlok.currentTime = 0;
             await shlok.play();
-          } catch (error) {
-            console.log("Shlok autoplay blocked:", error);
+          } catch (err) {
+            console.log(err);
           }
         };
-      } catch (error) {
-        console.log("Autoplay blocked:", error);
+      } catch (err) {
+        console.log(err);
       }
     };
 
-    playTempleAudio();
+    window.addEventListener("temple-start", startTemple);
 
     return () => {
+      window.removeEventListener("temple-start", startTemple);
+
       bell.pause();
       shlok.pause();
 

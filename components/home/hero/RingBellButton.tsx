@@ -1,49 +1,65 @@
 "use client";
 
-import { useRef } from "react";
-import Image from "next/image";
+import { BellRing } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function RingBellButton() {
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const bellAudio = useRef<HTMLAudioElement>(null);
+  const mantraAudio = useRef<HTMLAudioElement>(null);
 
-  const playBell = () => {
-    // Bell sound
-    const bell = new Audio("/audio/temple-bell.mp3");
-    bell.play();
+  const [started, setStarted] = useState(false);
 
-    // Start background mantra after bell
-    setTimeout(() => {
-      audioRef.current?.play().catch(() => {});
-    }, 1800);
-  };
+  useEffect(() => {
+    const startTemple = async () => {
+      if (started) return;
+
+      setStarted(true);
+
+      try {
+        // Ring bell
+        bellAudio.current!.currentTime = 0;
+        await bellAudio.current?.play();
+
+        // Wait for bell to finish
+        setTimeout(async () => {
+          mantraAudio.current!.loop = true;
+          await mantraAudio.current?.play();
+        }, 1800);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    window.addEventListener("temple-start", startTemple);
+
+    return () => {
+      window.removeEventListener("temple-start", startTemple);
+    };
+  }, [started]);
 
   return (
     <>
-      <button
-        onClick={playBell}
-        className="group flex items-center gap-4 rounded-full
-        bg-gradient-to-r from-yellow-400 to-orange-500
-        px-8 py-4
-        text-xl font-bold text-white
-        shadow-2xl transition-all
-        hover:scale-105"
-      >
-        <Image
-          src="/images/bell.png"
-          alt="Temple Bell"
-          width={42}
-          height={42}
-          className="group-hover:animate-bounce"
-        />
-
-        🔔 Ring The Bell
-      </button>
+      <audio
+        ref={bellAudio}
+        preload="auto"
+        src="/audio/bell.mp3"
+      />
 
       <audio
-        ref={audioRef}
-        src="/audio/mantra.mp3"
-        loop
+        ref={mantraAudio}
+        preload="auto"
+        src="/audio/shlok.mp3"
       />
+
+      {!started && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/20 backdrop-blur-[2px] pointer-events-none"
+        >
+        </motion.div>
+      )}
     </>
   );
 }
